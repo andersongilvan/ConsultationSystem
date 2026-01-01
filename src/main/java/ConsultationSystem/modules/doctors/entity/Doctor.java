@@ -25,12 +25,13 @@ public class Doctor {
     @Column
     private String name;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String crm;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Speciality speciality;
 

@@ -27,13 +27,13 @@ public class Address {
     @Column
     private String neighborhood;
 
-    @Column
+    @Column(nullable = false)
     private String city;
 
-    @Column
+    @Column(nullable = false)
     private String state;
 
-    @Column(name = "zip_code")
+    @Column(name = "zip_code", nullable = false)
     private String zipCode;
 
     @OneToOne(mappedBy = "address", fetch = FetchType.LAZY)

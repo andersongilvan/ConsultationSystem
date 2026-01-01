@@ -16,12 +16,17 @@ import lombok.NoArgsConstructor;
 @Table(name = "patients")
 public class Patient {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String email;
 
+    @Column(unique = true)
     private String cpf;
 
+    @Column(nullable = false)
     private String phone;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
